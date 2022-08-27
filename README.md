@@ -1,4 +1,4 @@
-# ☘ yogi_otte
+# 🍙 요기 어때?
 
 ## 🔜 목차
 1. 프로젝트 소개  
@@ -13,6 +13,7 @@
 10. Layout
 
 ## 📄 프로젝트 소개
+여러가지 검색 기능이 탑재된 사용자 기반 맛집 추천 시스템
 
 ### ⏲ 개발 기간 : 2022.6.2 ~ 2022.6.14
 
@@ -47,90 +48,8 @@
 * Database : MySQL
 
 ## 📖 Stack & Library Version
-<img src="https://img.shields.io/badge/python-3.9.12-brightgreen"> <img src="https://img.shields.io/badge/django-4.0.6-brightgreen"> <img src="https://img.shields.io/badge/django_rest_framework-3.13.1-brightgreen"> <img src="https://img.shields.io/badge/django_rest_framework_simple_jwt-5.2.0-brightgreen"> <img src="https://img.shields.io/badge/django_cors_header-3.13.0-brightgreen"> <img src="https://img.shields.io/badge/mysql_client-2.1.1-brightgreen"> <img src="https://img.shields.io/badge/tensorflow-2.9.1-brightgreen"> <img src="https://img.shields.io/badge/konlpy-0.6.0-brightgreen"> <img src="https://img.shields.io/badge/boto3-1.24.40-brightgreen"> <img src="https://img.shields.io/badge/PyJWT-2.4.0-brightgreen"> <img src="https://img.shields.io/badge/urllib3-1.26.11-brightgreen"> <img src="https://img.shields.io/badge/requests-2.28.1-brightgreen">
-</br>
+
 ## 🕹 주요 기능
-### 로그인 / 회원가입
-* JWT 토큰 방식으로 구현
-* Local Storage에 저장
-* 각 페이지마다 접속시 refresh token을 받게 설정
-* 아이디를 고유값으로 지정하여 중복 방지
-
-### 메인 페이지
-* 로그인 유무에 따라 추천 커뮤니티 변경
-    * 추천 커뮤니티는 무조건 공개 커뮤니티에 대해서만 제공
-* 커뮤니티 별 하루 접속자 수 순위표 제공
-* 가입되지 않은 커뮤니티에 가입 요청 / 요청 취소 가능
-* 커뮤니티 카드를 누를시 해당 커뮤니티로 이동
-    * 단 가입되지 않은 커뮤니티는 접속 불가능
-* 커뮤니티 생성
-    * 커뮤니티 생성자는 관리자로 자동 설정
-
-### 마이 페이지
-* 비밀번호 변경 가능
-* 가입된 커뮤니티 관리
-* 작성한 글 관리(이동은 미구현)
-* 작성한 댓글 관리(이동은 미구현)
-* 유저->커뮤니티 가입 요청 결과 조회 / 요청 철회 / 요청 삭제
-* 커뮤니티->유저 가입 요청 승락 / 요청 거절
-
-### 커뮤니티 페이지
-* 게시판 생성
-   * 생성자는 게시판 관리자도 자동 설정
-* 게시글 작성
-   * Quill Library로 게시글 작성 기능 구현
-   * 게시글에서 이미지 업로드 가능
-   * 파일 업로드 가능
-   * 게시글 제목, 내용중 하나라도 누락이 있을시 작성 불가능
-* 게시글 수정
-   * 게시글 제목, 내용중 하나라도 누락이 있을시 작성 불가능
-* 댓글 작성
-   * 생성시 날짜, 아이디 노출
-   * 시간순으로 배치
-   * 내용이 없으면 작성 불가능
-
-## 😣 TroubleShooting
-1. User와 Community가 ManyToMany 관계일때 커뮤니티 관리자 저장할 Table 설정
-    * 해결 : UserAndCommunity라는 중간 테이블을 만들고 User, Community를 참조
-    * User에 Admin을 설정할 시 어떤 커뮤니티에 해당되는지 설정하기 어려움
-    * 마찬가지로 Community에 Admin에 설정을 해도 같은 문제 발생
-
-2. 동시에 여러 개의 serializer 정보 저장 중 오류 발생으로 일정 부분만 저장될 때
-    * 해결 : transaction을 사용하여 모든 serializer가 동시에 저장되게끔 설정
-
-## 🏚 Architecture
-![image](https://user-images.githubusercontent.com/90381057/186589235-d27760f4-2d18-4642-90be-950eca5e2a92.png)
-
-
-## ⚙ [ERD](https://www.erdcloud.com/d/EL9ztjydoLhqhysPe)
-![image](https://user-images.githubusercontent.com/90381057/186103025-070baeb8-083d-4394-9153-207b4751c940.png)
-
-## 🚀 **API 설계**
-[article](https://documenter.getpostman.com/view/16204656/VUquLFrn#intro)  
-[community](https://documenter.getpostman.com/view/16204656/VUquLFw9)  
-[noticeboard](https://documenter.getpostman.com/view/16204656/VUquLajN)  
-[user](https://documenter.getpostman.com/view/16204656/VUquLajQ)  
-
-## 🗺 Layout
-![Group 26](https://user-images.githubusercontent.com/90381057/186547234-04a9537b-2f48-4a3d-903b-bed3f7b3ba8d.png)
-
-# 🍙 요기 어때?
-### **서비스 아이디어**
-
-**요기요 + 여기어때 를 합쳐서 ‘요기 어때’** 라는 네임을 짓게 되었습니다.<br>
-![요기어때](https://velog.velcdn.com/images/soyoyun/post/5e382618-78a8-4123-a37e-768412455520/image.png)
-
-프론트 제작시 백에서 받아온 데이터를 기반으로 요기요 사이트와 비슷한 느낌을 줄 수 있도록 제작되었습니다
-
----
-
-### **서비스 소개**
-
-**여러가지 검색 기능이 탑재된 사용자 기반 맛집 추천 시스템**
-
----
-
-### 기능 소개
 
 - **오늘 나의 기분은 ? (로그인 후 이용 가능, /mood로 연결됨) [핵심기능]**
     - **0-100 사이의 값을 입력하면 그 기분과 비슷한 기분을 느낀 사람들이 많이 먹은 음식을 볼 수 있다.**
@@ -157,37 +76,27 @@
     - 최근에 사람들이 가장 많이 먹은 음식은?
         - 스크래핑 해왔던 날을 기점으로 최근 30일 동안 가장 많은 리뷰가 달린 가게를 볼 수 있다.
 
-- **역할 분담**
-    - **데이터 수집 (스크래핑, 모델 학습용) : 가현**
-    - **AI 모델 제작 : 진영**
-    - **백엔드 담당 : 승태**
-    - **프론트앤드 담당 : 민재**
-- **발표자 및 영상촬영**
-    - **발표자 : 윤가현**
-    - **영상촬영 : 김민재**
-    
----
 
-### 개발 일정
+
+### 🛠 개발 일정
 ![](https://velog.velcdn.com/images/soyoyun/post/38729843-fe80-4829-b6ee-0e413e97343e/image.png)
 
----
 
 ### 최종 **레이아웃**
 ![](https://velog.velcdn.com/images/soyoyun/post/e36504a0-6bb5-426c-95cc-7bfdb2937ae2/image.png)
 
----
 
-### 페이지 시연
 
-**- 로그인 전 화면**
+**제작 완료**
+
+- 로그인 전 화면
     
 ![](https://velog.velcdn.com/images/soyoyun/post/b6f37af4-adb7-4930-9603-1e55f7542de7/image.png)
 
 ![](https://velog.velcdn.com/images/soyoyun/post/1a8942b5-2018-444a-8154-94b6e8aaca05/image.png)
 
     
-**- 로그인 후 화면**
+- 로그인 후 화면
     
 ![](https://velog.velcdn.com/images/soyoyun/post/4124fb34-068c-4ad0-b592-2eb5c42b8460/image.png)
 
@@ -217,6 +126,7 @@
     
 - **네이버 맵 스크래핑같은 경우 csv 파일 제작 이후 진행되는 모델 제작을 위해 리뷰, 개인별점, 라벨 값만을 동일하게 추출해 내어 테스트데이터로 이용했다. 데이터양은 학습 정확도가 90%가 넘을 정도로 가져왔다.**
 ---
+
 ### 사용한 모델, 감성분석
 
 데이터 처리 이후 해당 리뷰가 긍정인 경우 1, 부정인 경우 0을 표시한 레이블로 구성되어져 있는 csv 파일을 가져와 자연어 처리를 진행했다. 이를 바탕으로 **감성분석**(**Sentiment Analysis, 텍스트에 나타나는 감정/기분 등의 주관적 요소를 분석**)을 해보았다.
@@ -234,20 +144,7 @@
 ![](https://velog.velcdn.com/images/soyoyun/post/32af943b-1ad0-4227-bde0-729be3f16777/image.png)
 
 ---
-### 장고 모델 설계
 
-foreign key갖는 부분을 모델에서 one-to-many 로 구성했으며 다른건 전부 one-to-one으로 구성했다.
-
-Review 모델 안에 store, user부분을 foreign key로 연결해주었고
-
-![](https://velog.velcdn.com/images/soyoyun/post/42f0a2f7-f13f-4e69-af00-e157f52f2696/image.png)
-
-
-Store모델 안에 category를 foreign key로 연결해주었다.
-![](https://velog.velcdn.com/images/soyoyun/post/a9ee2106-1257-4968-98c1-c937510ed527/image.png)
-
-
----
 ### **KPT,** 피드백 반영
 
 **GitHub** 
@@ -259,7 +156,6 @@ Store모델 안에 category를 foreign key로 연결해주었다.
 
 **ERD 설계**
 
-DB설계를 미리 해두었다.
 ![](https://velog.velcdn.com/images/soyoyun/post/da53b7ac-cb5a-4c91-9075-4b00fee414b2/image.png)
 
 ---
@@ -355,14 +251,3 @@ DB설계를 미리 해두었다.
 - 0613 모든 페이지 부족한 부분들 수정
 
 ---
-
-### 시연 영상
-
-**아래 이미지 클릭시 시연영상으로 이동합니다 😁**
-[![클릭시 시연영상으로 이동](https://velog.velcdn.com/images/soyoyun/post/a8097334-73dc-41e2-ad5f-dbc0b0a760ff/image.png)](https://www.youtube.com/watch?v=0nFCMUi_nic&ab_channel=%EA%B9%80%EB%AF%BC%EC%9E%AC)
-
----
-### [깃허브 링크](https://github.com/Reinforcement-succeeded/yogi_otte)
-
-### [노션으로 보기](https://tangy-note.notion.site/274af6aae9cb4d729ec5ee7db0dce9ca)
-
