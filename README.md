@@ -1,17 +1,5 @@
 # 🍙 요기 어때?
 
-## 🔜 목차
-1. 프로젝트 소개  
-2. 팀 구성  
-3. Stack
-4. Stack & Library Version
-5. 주요 기능  
-6. Troubleshooting
-7. Architecture
-8. ERD
-9. API
-10. Layout
-
 ## 📄 프로젝트 소개
 여러가지 검색 기능이 탑재된 사용자 기반 맛집 추천 시스템
 
